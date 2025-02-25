@@ -159,17 +159,14 @@
     </div>
 
     <script>
-        // DOM Elements
         const generateButton = document.getElementById('generateButton');
         const copyButton = document.getElementById('copyButton');
         const keyContainer = document.getElementById('keyContainer');
         const alert = document.getElementById('alert');
         const keyInfo = document.getElementById('keyInfo');
 
-        // Current key
         let currentKey = '';
 
-        // Generate key function
         function generateKey() {
             const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
             let result = '';
@@ -182,7 +179,6 @@
 
             currentKey = result;
 
-            // Update UI
             keyContainer.textContent = currentKey;
             keyContainer.style.display = 'block';
 
@@ -194,7 +190,6 @@
             alert.classList.remove('show');
         }
 
-        // Copy to clipboard function
         function copyToClipboard() {
             navigator.clipboard.writeText(currentKey)
                 .then(() => {
@@ -208,7 +203,6 @@
                 });
         }
 
-        // Event listeners
         generateButton.addEventListener('click', generateKey);
         copyButton.addEventListener('click', copyToClipboard);
     </script>
